@@ -1,39 +1,30 @@
-// ===== querySelector: memilih SATU elemen =====
-const judul = document.querySelector("#judul");
-judul.style.color = "darkblue";
+function gantiGelap() {
+  document.body.style.backgroundColor = "#222222";
+  document.getElementById("judul").style.color = "gold";
  
-const kartuPertama = document.querySelector("kartu");
-console.log(kartuPertama);
+  const semuaIsi = document.querySelectorAll(".isi");
+  semuaIsi.forEach((p) => {
+    p.style.color = "white";
+  });
+}
  
-const hargaPertama = document.querySelector(".kartu .harga");
-hargaPertama.style.fontWeight = "bold";
+function gantiTerang() {
+  document.body.style.backgroundColor = "white";
+  document.getElementById("judul").style.color = "black";
  
-const menuPertama = document.querySelector(".menu li:first-child");
-menuPertama.style.color = "red";
- 
-// ===== querySelectorAll: memilih BANYAK elemen =====
-const semuaKartu = document.querySelectorAll(".kartu");
-console.log(semuaKartu.length);
- 
-semuaKartu.forEach(function (kartu) {
-  kartu.style.border = "2px solid teal";
-  kartu.style.padding = "10px";
-  kartu.style.margin = "10px 0";
-});
- 
-const semuaHarga = document.querySelectorAll(".harga");
-semuaHarga.forEach((harga) => {
-  harga.style.color = "green";
-});
- 
-const semuaMenu = document.querySelectorAll(".menu li");
-console.log(semuaMenu.length);
+  const semuaIsi = document.getElementsByClassName("isi");
+  for (let i = 0; i < semuaIsi.length; i++) {
+    semuaIsi[i].style.color = "black";
+  }
+}
+function gantiHijau() {
+  document.body.style.backgroundColor = "lightgreen";
 
-const menuKedua = document.querySelector(".menu li:nth-child(2)");
-menuKedua.style.color = "orange";
-
-const semuaJudul = document.querySelectorAll(".kartu h3");
-
-semuaJudul.forEach((judul) => {
-  judul.textContent = judul.textContent.toUpperCase();
-});
+  const semuaIsi = document.querySelectorAll(".isi");
+  semuaIsi.forEach((p) => {
+    p.style.color = "darkgreen";
+  });
+}
+function gantiJudul() {
+  document.getElementById("judul").textContent = "Anindra Satria Chesta Perdana";
+}
